@@ -4,9 +4,11 @@ What is the largest prime factor of the number 600851475143 ?
 '''
 
 def is_prime(n):
-    if n < 2:
+    if n == 2:
+        return True
+    if n % 2 == 0 or n < 2:
         return False
-    for i in range(3, int(n ** 0.5 // 2 + 1), 2):
+    for i in range(3, int(n**0.5 + 1), 2):
         if n % i == 0:
             return False
     return True
